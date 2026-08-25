@@ -1,0 +1,18 @@
+{
+  "name": "my-custom-theme",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^10.0.4",
+    "sass": "^1.102.0",
+    "vite": "^6.4.3",
+    "vite-plugin-live-reload": "^3.1.0",
+    "vite-plugin-static-copy": "^4.1.1"
+  }
+}

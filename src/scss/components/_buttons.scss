@@ -1,0 +1,25 @@
+@use "../base/variables.scss" as var;
+
+.btn {
+    transition: all .3s ease;
+    display: inline-block;
+    width: fit-content;
+    padding: 1rem 1.3rem;
+    background: var.$clr-primary;
+    border-radius: 10px;
+
+    &:hover {
+        transform: translateY(-3px);
+        opacity: .6;
+    }
+
+    &.btn--dark {
+        background:teal;
+        color: rgb(188, 238, 238);
+    }
+
+    &.btn--light {
+        background: rgb(188, 238, 238);
+        color: teal;
+    }
+}
