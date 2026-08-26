@@ -11,14 +11,16 @@ add_action( 'after_setup_theme', 'my_custom_theme_setup' );
 
 // Figures out if you are coding locally and enqueues your stylesheets and JavaScript files
 function my_custom_theme_assets() {
-    $is_dev = (defined('WP_DEBUG') && WP_DEBUG) 
-        && !str_contains($_SERVER['HTTP_HOST'] ?? '', '.local.lt') 
-        && !str_contains($_SERVER['HTTP_HOST'] ?? '', '.localsite.io');
-
+    // Automatically checks if Vite dev server is running on port 5173
+    $is_dev = false;
+    $handle = @fsockopen('localhost', 5173, $errno, $errstr, 0.1);
+    if ($handle) {
+        $is_dev = true;
+        fclose($handle);
+    }
 
     // Always load the root CSS
     wp_enqueue_style( 'my-theme-style', get_stylesheet_uri(), [], '1.0.0' );
-
 
     if ($is_dev) {
         // This injects Vite's hot-reload client so your browser watches for changes
@@ -30,9 +32,7 @@ function my_custom_theme_assets() {
     }
 }
 
-
 add_action('wp_enqueue_scripts', 'my_custom_theme_assets');
-
 
 
 
