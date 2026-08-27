@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "watch": "vite build --watch"
+    "watch": "vite build --watch",
+    "start": "concurrently \"npx vite\" \"npm run watch\""
   },
   "dependencies": {},
   "devDependencies": {
