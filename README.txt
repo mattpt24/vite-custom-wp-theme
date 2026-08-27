@@ -10,10 +10,12 @@ npm install --include=dev
 
 
 
-! Requires 2 Terminals !
+TO START, RUN THE FOLLOWING COMMAND IN THE TERMINAL:
+npm run start
 
-npx vite - Compiles and concats scss and js. 
-npm run watch - Watches for changes and updates the style.css and script.js in the root dir
+OR OPEN 2 TERMINALS AND RUN: 
+npx vite (Compiles and concats scss and js). 
+npm run watch (Watches for changes and updates the style.css and script.js in the root dir)
 
 
 
